@@ -67,8 +67,9 @@ extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         if indexPath.row == indexPath.row {
-            let product = products[indexPath.row]
+            let selectedProduct = products[indexPath.row]
             let vc = ProductDetailsViewController(/*goodsDetail: goods*/)
+            vc.product = selectedProduct
             navigationController?.pushViewController(vc, animated: true)
         }
     }
